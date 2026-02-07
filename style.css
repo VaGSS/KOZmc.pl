@@ -1,0 +1,157 @@
+/* --- RESET I ZMIENNE --- */
+:root {
+    --bg-dark: #0a0a0a;       /* Bardzo ciemne tło */
+    --bg-card: #141414;       /* Tło kart */
+    --primary: #9b59b6;       /* Fioletowy (KOZmc) */
+    --gold: #f1c40f;          /* Złoty (dla rangi Kozioł) */
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+    --font: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- NAWIGACJA --- */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { font-weight: 500; font-size: 0.9rem; text-transform: uppercase; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.btn-nav-shop {
+    background: var(--gold); color: #000 !important;
+    padding: 8px 20px; border-radius: 4px; font-weight: 700 !important;
+}
+
+/* --- NAGŁÓWEK PODSTRON (HEADER) --- */
+.page-header {
+    background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+    padding: 4rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+}
+.page-header h1 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; }
+.page-header p { color: var(--text-muted); }
+
+/* --- GŁÓWNY KONTENER KART (TO NAPRAWIA UKŁAD) --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.card-container {
+    display: flex;              /* Układa elementy obok siebie */
+    flex-wrap: wrap;            /* Pozwala spaść niżej na telefonach */
+    justify-content: center;    /* Wyśrodkowuje całość */
+    gap: 2rem;                  /* Odstępy między kartami */
+}
+
+/* --- WYGLĄD POJEDYNCZEJ KARTY --- */
+.card {
+    background: var(--bg-card);
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    
+    /* WYMIARY KARTY - WAŻNE */
+    flex: 1 1 300px;           /* Elastyczność: startuje od 300px */
+    max-width: 350px;          /* Nie będzie szersza niż 350px */
+    min-width: 280px;          /* Nie będzie węższa niż 280px */
+    
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+/* Specyficzne dla Sklepu */
+.rank-featured {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.1);
+}
+.badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: #000; padding: 4px 15px;
+    border-radius: 20px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;
+}
+.price { font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 15px 0; }
+.price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+.features { list-style: none; text-align: left; margin-bottom: 2rem; flex-grow: 1; }
+.features li { padding: 8px 0; border-bottom: 1px solid #222; color: #ccc; font-size: 0.9rem; }
+.features i { color: var(--primary); margin-right: 10px; width: 20px; text-align: center; }
+
+.btn-buy {
+    background: #222; color: #fff; padding: 12px; border-radius: 6px; font-weight: 600; margin-top: auto;
+}
+.btn-gold { background: var(--gold); color: #000; }
+.btn-buy:hover { opacity: 0.9; }
+
+/* Specyficzne dla Ekipy */
+.avatar {
+    width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1rem;
+    border: 3px solid var(--primary);
+}
+.role {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 5px;
+}
+.role-owner { background: #e74c3c; color: #fff; }
+.role-admin { background: #e67e22; color: #fff; }
+.role-mod { background: #2ecc71; color: #000; }
+
+/* --- HERO (HOME) --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607988795691-3d0147b43231?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 1rem; }
+.ip-wrapper {
+    background: rgba(255,255,255,0.1); padding: 1rem 2rem; border-radius: 8px;
+    display: inline-flex; align-items: center; gap: 15px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s; margin-top: 2rem;
+}
+.ip-wrapper:hover { border-color: var(--primary); background: rgba(255,255,255,0.15); }
+
+/* --- STOPKA --- */
+footer { margin-top: auto; padding: 2rem; background: #050505; text-align: center; color: #555; font-size: 0.8rem; }
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+    .page-header h1 { font-size: 2rem; }
+}

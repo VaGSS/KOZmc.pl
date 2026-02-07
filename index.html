@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOZmc.pl - Serwer PvP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">KOZ<span>mc</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Start</a></li>
+            <li><a href="ekipa.html">Ekipa</a></li>
+            <li><a href="sklep.html" class="btn-nav-shop">SKLEP</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>KOZmc.pl</h1>
+            <p>Najlepsza optymalizacja • Wersja 1.20.1 • Ranking ELO</p>
+            
+            <div class="ip-wrapper" onclick="copyIp()">
+                <i class="fas fa-copy"></i>
+                <span id="server-ip-text">KOZmc.pl</span>
+            </div>
+            <div id="player-count" style="margin-top: 15px; font-weight: 600;">Ładowanie...</div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem; text-transform: uppercase;">Dlaczego my?</h2>
+        <div class="card-container">
+            <div class="card">
+                <i class="fas fa-shield-alt" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3>AntyCheat</h3>
+                <p style="color: #aaa; margin-top: 10px;">Autorski system wykrywania wspomagaczy zapewnia uczciwą grę.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-server" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3>Brak Lagów</h3>
+                <p style="color: #aaa; margin-top: 10px;">Serwery zlokalizowane w Polsce gwarantują niski ping.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3>Społeczność</h3>
+                <p style="color: #aaa; margin-top: 10px;">Aktywna administracja i zgrana społeczność graczy.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 KOZmc.pl. Wszelkie prawa zastrzeżone.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
