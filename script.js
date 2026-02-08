@@ -1,4 +1,4 @@
-const SERVER_IP = "KOZmc.pl"; 
+const SERVER_IP = "mc308.boxtoplay.com:26237"; 
 
 // Kopiowanie IP
 function copyIp() {
@@ -31,4 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Jeśli na stronie jest element z ID 'server-ip-text', wpisz tam IP
     const ipText = document.getElementById("server-ip-text");
     if(ipText) ipText.innerText = SERVER_IP;
+
 });
